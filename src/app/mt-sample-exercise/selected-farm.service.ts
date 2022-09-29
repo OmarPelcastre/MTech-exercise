@@ -1,11 +1,13 @@
-import { Observable } from "rxjs";
-import { Farm } from "./farm";
-import { data } from "./mock-data.json";
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Farm } from './farm';
 
 export class SelectedFarmService {
+  private farm = new BehaviorSubject(null);
+  sharedfarm = this.farm.asObservable();
 
-  getFarms(): Observable<Farm> {
-    return data<Farm>
+  constructor() {}
+
+  nextfarm(farm: Farm) {
+    this.farm.next(farm);
   }
-
 }

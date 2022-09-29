@@ -1,1 +1,8 @@
-<h5 >Farm Selected</h5>
+<div *ngIf="farm" class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ farm.FarmName }}</h5>
+    <h6 class="card-subtitle">{{ farm.FarmNo }}</h6>
+    <p class="card-text">{{ farm.Address }}</p>
+    <small class="card-text">{{ farm.ActiveDate }}</small>
+  </div>
+</div>
